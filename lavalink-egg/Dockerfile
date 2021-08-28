@@ -1,3 +1,9 @@
+# ----------------------------------
+# Lumine's Lavalink Docker Image
+# Environment: Java
+# Minimum Panel Version: 1.x.x (Might be 2.x.x)
+# ----------------------------------
+
 FROM alpine:3.14
 
 MAINTAINER Lumine, <lumine@notyourfriend.xyz>
