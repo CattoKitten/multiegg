@@ -6,7 +6,7 @@ RUN apk add wget curl git ca-certificates tar bash sqlite gnupg \
     && adduser --disabled-password --home /home/container container
 
 RUN curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh \
-    && jabba install adopt-openjdk@1.16-0
+    && jabba install adopt-openj9@1.16-0
 
 USER container
 ENV  USER=container HOME=/home/container
