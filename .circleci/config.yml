@@ -1,0 +1,16 @@
+version: 2
+jobs:
+ build:
+   machine: true
+   steps:
+     - checkout
+     # start proprietary DB using private Docker image
+     # with credentials stored in the UI
+     - run: |
+          docker login -u="lumine" -p="GvGrzfGOd84tNNtt5hCua9jWYSHUM0TfX6RNJNCVnSGl+v6sFBeH1u51JsVuHePm" quay.io
+
+     # build the application image
+     - run: docker build -f beta-egg/Minio-Beta -t quay.io/lumine/ptero-images:minio-beta .
+
+     # deploy the image
+     - run: docker push quay.io/lumine/ptero-images:minio-beta
